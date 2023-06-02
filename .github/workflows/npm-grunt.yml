@@ -17,7 +17,7 @@ jobs:
     - name: install pnpm
       run: npm install -g pnpm
     - name: install deps
-      run: pnpm install --legacy-peer-deps
+      run: pnpm install
     - name: build app
       run: pnpm run build
     - name: copy dist with scp
