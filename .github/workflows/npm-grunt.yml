@@ -29,5 +29,3 @@ jobs:
         port: ${{ secrets.REMOTE_PORT }}
         source: "docs"
         target: ${{ secrets.REMOTE_TARGET }}
-        strip-components: 1
-    
