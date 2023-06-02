@@ -29,3 +29,8 @@ jobs:
         port: ${{ secrets.REMOTE_PORT }}
         source: "dist/"
         target: ${{ secrets.REMOTE_TARGET }}
+        run: |
+          timestamp=$(date +%s)
+          tar czf "backup_${timestamp}.tar.gz" *
+          find . -name "backup_*.tar.gz" -mtime +7 -exec rm {} \;
+          rm -rf *
