@@ -27,6 +27,7 @@ jobs:
         username: ${{ secrets.REMOTE_USERNAME }}
         password: ${{ secrets.REMOTE_PASSWORD }}
         port: ${{ secrets.REMOTE_PORT }}
-        source: "docs/"
+        source: "docs"
         target: ${{ secrets.REMOTE_TARGET }}
+        strip-components: 1
     
