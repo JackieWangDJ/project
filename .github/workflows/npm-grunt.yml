@@ -13,7 +13,7 @@ jobs:
     - name: install nodejs env
       uses: actions/setup-node@v2.5.2
       with:
-        node-version: "16.x"
+        node-version: "18.x"
     - name: install pnpm
       run: npm install pnpm -G
     - name: install deps
