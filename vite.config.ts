@@ -32,7 +32,7 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
         },
       },
     },
-    base: './'
+    base: "./",
   };
 };
 // export default defineConfig({
