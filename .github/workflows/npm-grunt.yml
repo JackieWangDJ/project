@@ -30,7 +30,6 @@ jobs:
         source: "dist/"
         target: ${{ secrets.REMOTE_TARGET }}
         run: |
-          timestamp=$(date +%s)
+          timestamp=$(date +%s.%N | cut -d '.' -f 1)
           tar czf "backup_${timestamp}.tar.gz" *
-          find . -name "backup_*.tar.gz" -mtime +7 -exec rm {} \;
-          rm -rf *
+          sudo find . -name "backup_*.tar.gz" -mtime +6 -exec rm {} \;
