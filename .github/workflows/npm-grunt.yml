@@ -1,0 +1,30 @@
+name: Deploy-website
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install nodejs env
+      uses: actions/setup-node@v2.5.2
+      with:
+        node-version: "16.x"
+    - name: install deps
+      run: npm install
+    - name: build app
+      run: npm run build
+    - name: copy dist with scp
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: ${{ secrets.REMOTE_IP }}
+        username: ${{ secrets.REMOTE_USERNAME }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
+        port: ${{ secrets.REMOTE_PORT }}
+        source: "/docs"
+        target: ${{ secrets.REMOTE_TARGET }}
+    
