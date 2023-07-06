@@ -3,6 +3,9 @@ import App from "@/App.vue";
 // 引用 element-plus 插件和样式
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import "virtual:windi.css";
+// 引入仓库
+import pinia from "@/store";
 // element-plus 的国际化，暂时忽略这个
 // @ts-ignore
 import zhCn from "element-plus/dist/locale/zh-cn.mjs";
@@ -28,5 +31,7 @@ app.use(ElementPlus, {
 app.use(allGlobalComponent);
 // 使用路由
 app.use(router);
+// 使用仓库
+app.use(pinia);
 
 app.mount("#app");

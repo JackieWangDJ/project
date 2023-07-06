@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tst</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        position: relative;
+      }
+      .card {
+        position: absolute;
+        width: 100px;
+        height: 200px;
+        background-color: pink;
+        left: 10px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card"></div>
+    <script>
+      const card = document.querySelector(".card");
+      card.onmousedown = (e) => {
+        let x = e.pageX - card.offsetLeft;
+        let y = e.pageY - card.offsetTop;
+        window.onmousemove = (e) => {
+          const cx = e.pageX - x;
+          const cy = e.pageY - y;
+          card.style.left = cx + "px";
+          card.style.top = cy + "px";
+        };
+        window.onmouseup = (e) => {
+          window.onmousemove = null;
+          window.onmouseup = null;
+        };
+      };
+    </script>
+  </body>
+</html>

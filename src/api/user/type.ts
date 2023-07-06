@@ -12,7 +12,8 @@ export interface loginResponseData {
 }
 // 登录返回数据类型的data数据类型
 interface dataType {
-  token: string;
+  token?: string;
+  message?: string;
 }
 // 获取用户新信息返回的数据类型
 export interface userResponseData {
