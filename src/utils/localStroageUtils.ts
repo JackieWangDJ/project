@@ -7,7 +7,7 @@ export const GET_TOKEN = () => {
   try {
     return JSON.parse(localStorage.getItem("TOKEN") || "");
   } catch (e) {
-    return null
+    return null;
   }
 };
 

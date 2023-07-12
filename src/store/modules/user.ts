@@ -28,7 +28,7 @@ let useUserStore = defineStore("User", {
         this.token = result.data.token;
         // Therefore,localStorage is also required for persistent storage
         localStorage.setItem("TOKEN", JSON.stringify(result.data.token));
-        SET_TOKEN((result.data.token as string))
+        SET_TOKEN(result.data.token as string);
         // use Promiss to return login success message
         return "Login Success";
       } else {
