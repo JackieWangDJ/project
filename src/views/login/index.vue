@@ -1,8 +1,8 @@
 <template>
   <div class="login_container">
-    <el-row :gutter="20">
-      <el-col :span="12" :offset="0"></el-col>
-      <el-col class="form_container" :span="12" :offset="0">
+    <el-row :gutter="0">
+      <el-col :span="12" :offset="0" :xs="0"></el-col>
+      <el-col class="form_container" :span="12" :offset="0" :xs="24">
         <el-form :model="userform" ref="form">
           <h1>Login</h1>
           <el-form-item label="">
@@ -55,6 +55,7 @@ const userform = reactive<loginForm>({
 });
 // login method
 const login = async () => {
+  // loading animatiion start
   loading.value = true;
   try {
     await useStore.userLogin(userform);
@@ -63,10 +64,14 @@ const login = async () => {
       type: "success",
       message: "Login Success",
     });
+    // loading animation end
     loading.value = false;
+    // catch Error from "await useStore.userLogin(userform)"
   } catch (error) {
     console.log((error as Error).message);
+    // get Error meesage
     const message = (error as Error).message;
+    // Error prompt
     ElNotification({
       type: "error",
       message,
@@ -77,21 +82,23 @@ const login = async () => {
 </script>
 <style scoped lang="scss">
 .login_container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 0px);
+  min-height: 520px;
+  min-width: 768px;
   background: url("@/assets/images/background.jpg") no-repeat;
   background-size: cover;
   box-sizing: border-box;
   .form_container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 0px);
+    min-height: 540px;
     @apply flex justify-center items-center;
     .el-form {
       width: 500px;
-      height: 50vh;
+      height: 360px;
       @apply flex flex-col justify-center items-center;
       background: url("@/assets/images/login_form.png");
-      margin-top: 20px;
       h1 {
         @apply m-10 text-light-50;
       }

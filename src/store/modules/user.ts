@@ -3,12 +3,13 @@ import { reqLogin } from "@/api/user";
 import type { loginForm, loginResponseData } from "@/api/user/type";
 import { defineStore } from "pinia";
 import { UserState } from "./types/type";
+import { SET_TOKEN, GET_TOKEN } from "@/utils/localStroageUtils";
 // create user repositories
 let useUserStore = defineStore("User", {
   // Where data is stored
   state: (): UserState => {
     return {
-      token: JSON.parse(localStorage.getItem("TOKEN") || "{}"), // Unique identification of the user
+      token: GET_TOKEN(), // Unique identification of the user
     };
   },
   // Where asynchronous requests and logic are handled
@@ -27,6 +28,7 @@ let useUserStore = defineStore("User", {
         this.token = result.data.token;
         // Therefore,localStorage is also required for persistent storage
         localStorage.setItem("TOKEN", JSON.stringify(result.data.token));
+        SET_TOKEN((result.data.token as string))
         // use Promiss to return login success message
         return "Login Success";
       } else {
