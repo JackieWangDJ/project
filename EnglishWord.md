@@ -1,4 +1,4 @@
-`time quantum` 时间段 
+`time quantum` 时间段
 
 `Encapsulate` 封装
 

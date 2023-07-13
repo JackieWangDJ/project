@@ -61,7 +61,6 @@ const userform = reactive<loginForm>({
 // rule form ref
 const ruleFormRef = ref<FormInstance>();
 
-
 // login method
 const login = async () => {
   await ruleFormRef.value?.validate();
@@ -91,8 +90,6 @@ const login = async () => {
     loading.value = false;
   }
 };
-
-
 
 // form validation rules
 const rules = reactive<FormRules>({

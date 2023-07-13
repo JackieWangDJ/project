@@ -48,5 +48,3 @@ let useUserStore = defineStore("User", {
 
 // export repositories function
 export default useUserStore;
-
-    

@@ -2,17 +2,16 @@
   <div class="layout-container">
     <el-container>
       <!-- left menu -->
-      <el-aside>Aside
-        <logo/>
+      <el-aside
+        >Aside
+        <logo />
       </el-aside>
       <el-container>
         <!-- header tabbar -->
         <el-header>Header</el-header>
         <!-- main -->
         <el-main>
-          <el-scrollbar>
-            Main
-          </el-scrollbar>
+          <el-scrollbar> Main </el-scrollbar>
         </el-main>
       </el-container>
     </el-container>
@@ -20,9 +19,8 @@
 </template>
 
 <script lang="ts" setup>
-import loge from './logo/index.vue'
+import loge from "./logo/index.vue";
 console.log(import.meta.env.VITE_APP_TITLE);
-
 </script>
 
 <style scoped lang="scss">
@@ -50,6 +48,4 @@ console.log(import.meta.env.VITE_APP_TITLE);
     height: $base-top-tabbar-height;
   }
 }
-
-
 </style>
