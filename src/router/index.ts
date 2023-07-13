@@ -11,7 +11,7 @@ router.beforeEach((to, from, next) => {
   if (!token && to.name !== "login") {
     ElNotification({
       type: "error",
-      title: "请先登录",
+      title: "Please login first!",
     });
     next({ name: "login" });
     return;
@@ -25,7 +25,7 @@ router.beforeEach((to, from, next) => {
   if (to.name == "login" && token) {
     ElNotification({
       type: "error",
-      title: "重复登录",
+      title: "Repeated login!",
     });
     next({ path: from.path });
     return;

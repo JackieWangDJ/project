@@ -3,20 +3,21 @@
     <el-row :gutter="0">
       <el-col :span="12" :offset="0" :xs="0"></el-col>
       <el-col class="form_container" :span="12" :offset="0" :xs="24">
-        <el-form :model="userform" ref="form">
+        <el-form :model="userform" :rules="rules" ref="ruleFormRef">
           <h1>Login</h1>
-          <el-form-item label="">
+          <el-form-item label="" prop="username">
             <el-input
               v-model="userform.username"
               :prefix-icon="User"
             ></el-input>
           </el-form-item>
-          <el-form-item label="">
+          <el-form-item label="" prop="password">
             <el-input
               v-model="userform.password"
               type="password"
               :prefix-icon="Lock"
               show-password
+              autocapitalize="false"
             ></el-input>
           </el-form-item>
           <el-form-item>
@@ -42,6 +43,10 @@ import useUserStore from "@/store/modules/user";
 import { ElNotification } from "element-plus";
 // vue-router
 import { useRouter } from "vue-router";
+// getTimeQuantum
+import { getTimeQuantum } from "@/utils/time";
+// import from validation related types
+import { FormInstance, FormRules } from "element-plus";
 // A loading effect of a button
 const loading = ref(false);
 // vue-router
@@ -53,8 +58,13 @@ const userform = reactive<loginForm>({
   username: <string>"admin",
   password: <string>"111111",
 });
+// rule form ref
+const ruleFormRef = ref<FormInstance>();
+
+
 // login method
 const login = async () => {
+  await ruleFormRef.value?.validate();
   // loading animatiion start
   loading.value = true;
   try {
@@ -63,6 +73,7 @@ const login = async () => {
     ElNotification({
       type: "success",
       message: "Login Success",
+      title: getTimeQuantum.value,
     });
     // loading animation end
     loading.value = false;
@@ -76,9 +87,44 @@ const login = async () => {
       type: "error",
       message,
     });
+    // loading animation end
     loading.value = false;
   }
 };
+
+
+
+// form validation rules
+const rules = reactive<FormRules>({
+  username: [
+    {
+      required: true,
+      message: "required username",
+      trigger: "blur",
+    },
+    {
+      required: true,
+      min: 5,
+      max: 20,
+      message: "Length should be 5 to 20",
+      trigger: "change",
+    },
+  ],
+  password: [
+    {
+      required: true,
+      message: "required password",
+      trigger: "blur",
+    },
+    {
+      required: true,
+      min: 5,
+      max: 20,
+      message: "Length should be 5 to 20",
+      trigger: "change",
+    },
+  ],
+});
 </script>
 <style scoped lang="scss">
 .login_container {

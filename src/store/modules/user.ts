@@ -14,6 +14,12 @@ let useUserStore = defineStore("User", {
   },
   // Where asynchronous requests and logic are handled
   actions: {
+    /**
+     * Asynchronously logs in a user.
+     *
+     * @param {loginForm} data - The loginForm data.
+     * @return {Promise<string>} A promise that resolves to a success message if the login is successful, or rejects with an error message if the login fails.
+     */
     async userLogin(data: loginForm) {
       // login seccuss and fail
       // Gets the content of the response
@@ -27,9 +33,9 @@ let useUserStore = defineStore("User", {
         // Becauise Pinia storage is a Javascript-based object, it cannot be persisted
         this.token = result.data.token;
         // Therefore,localStorage is also required for persistent storage
-        localStorage.setItem("TOKEN", JSON.stringify(result.data.token));
+        // localStorage.setItem("TOKEN", JSON.stringify(result.data.token));
         SET_TOKEN(result.data.token as string);
-        // use Promiss to return login success message
+        // use Promise to return login success message
         return "Login Success";
       } else {
         // login fail
@@ -42,3 +48,5 @@ let useUserStore = defineStore("User", {
 
 // export repositories function
 export default useUserStore;
+
+    
