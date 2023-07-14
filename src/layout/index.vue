@@ -2,8 +2,7 @@
   <div class="layout-container">
     <el-container>
       <!-- left menu -->
-      <el-aside
-        >
+      <el-aside>
         <Logo />
       </el-aside>
       <el-container>

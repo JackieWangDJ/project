@@ -13,13 +13,12 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import { useFile } from "@/utils/getAssetsImages"
-import { leftAsideIconPath } from "@/settings"
+import { useFile } from "@/utils/getAssetsImages";
+import { leftAsideIconPath } from "@/settings";
 // get app title from .env.development
 const appTitle = ref(import.meta.env.VITE_APP_TITLE);
 // import icon from assets
-const iconPath = useFile(leftAsideIconPath)
-
+const iconPath = useFile(leftAsideIconPath);
 </script>
 <style scoped lang="scss">
 // container style
@@ -30,7 +29,7 @@ const iconPath = useFile(leftAsideIconPath)
   // container item style
   .container-item {
     @apply flex justify-center items-center mt-5;
-    
+
     // icon style
     .el-image {
       width: 40px;
