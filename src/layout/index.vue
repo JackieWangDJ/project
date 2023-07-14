@@ -3,8 +3,8 @@
     <el-container>
       <!-- left menu -->
       <el-aside
-        >Aside
-        <logo />
+        >
+        <Logo />
       </el-aside>
       <el-container>
         <!-- header tabbar -->
@@ -19,8 +19,7 @@
 </template>
 
 <script lang="ts" setup>
-import loge from "./logo/index.vue";
-console.log(import.meta.env.VITE_APP_TITLE);
+import Logo from "./logo/index.vue";
 </script>
 
 <style scoped lang="scss">

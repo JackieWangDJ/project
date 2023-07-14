@@ -1,13 +1,27 @@
 // scss gloable variables
+
+// Global styles
 // layout container background color
 $base-container-background:#ecf0f1;
+// all layout base text color
+$base-text-color:#1e272e;
+
+// layout left aside menu related style
 // layout left aside width
 $base-left-menu-width:260px;
 // layout left aside background color
-$base-left-menu-background:#2c3e50;
+$base-left-menu-background:#485460;
+// layout left aside menu logo height
+$base-left-menu-logo-height:60px;
+// layout left aside menu logo right text font size
+$base-left-menu-logo-text-font-size:20px;
+
+// layout top tabbar related style
 // layout top tabbar height
 $base-top-tabbar-height:50px;
 // layout top tabbar background color
-$base-top-tabbar-background:#2ecc71;
+$base-top-tabbar-background:#ced6e0;
+
+// layout main content related style
 // layout main background color
-$base-main-background:#27ae60;
+$base-main-background:#dfe4ea;

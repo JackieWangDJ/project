@@ -27,3 +27,5 @@
 `required` 必须的，必填的
 
 `Repeated` 重复
+
+`Global` 全局
