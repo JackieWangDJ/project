@@ -21,7 +21,7 @@ export const constantRoutes = [
         component: () => import("@/views/home/index.vue"),
         meta: { title: "Home2" },
       },
-    ]
+    ],
   },
   {
     path: "/404",

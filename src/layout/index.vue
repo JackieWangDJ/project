@@ -7,7 +7,7 @@
         <el-scrollbar class="left-menu-scrollbar">
           <!-- dynamic menu -->
           <el-menu background-color="#485460" text-color="#fff">
-          <Menu :menuList="userStore.menuRoutes" />
+            <Menu :menuList="userStore.menuRoutes" />
           </el-menu>
         </el-scrollbar>
       </el-aside>
@@ -26,8 +26,8 @@
 <script lang="ts" setup>
 import Logo from "./logo/index.vue";
 import Menu from "./menu/index.vue";
-import useUserStore from "@/store/modules/user"
-const userStore = useUserStore()
+import useUserStore from "@/store/modules/user";
+const userStore = useUserStore();
 </script>
 
 <style scoped lang="scss">
