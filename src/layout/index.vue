@@ -4,6 +4,12 @@
       <!-- left menu -->
       <el-aside>
         <Logo />
+        <el-scrollbar class="left-menu-scrollbar">
+          <!-- dynamic menu -->
+          <el-menu background-color="#485460" text-color="#fff">
+          <Menu :menuList="userStore.menuRoutes" />
+          </el-menu>
+        </el-scrollbar>
       </el-aside>
       <el-container>
         <!-- header tabbar -->
@@ -19,6 +25,9 @@
 
 <script lang="ts" setup>
 import Logo from "./logo/index.vue";
+import Menu from "./menu/index.vue";
+import useUserStore from "@/store/modules/user"
+const userStore = useUserStore()
 </script>
 
 <style scoped lang="scss">
@@ -32,6 +41,12 @@ import Logo from "./logo/index.vue";
     width: $base-left-menu-width;
     background-color: $base-left-menu-background;
     height: 100vh;
+    .left-menu-scrollbar {
+      height: calc(100vh - $base-left-menu-logo-height);
+      .el-menu {
+        border-right: none;
+      }
+    }
   }
   // main style
   .el-main {

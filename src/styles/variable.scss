@@ -1,8 +1,11 @@
 // scss gloable variables
 
 // Global styles
+// #region  layout container and so on
 // layout container background color
-$base-container-background:#ecf0f1;
+
+/// 跨浏览器的渐变背景，垂直渐变，自上而下
+$base-container-background:#ecf0f1;//主要颜色，用于按钮和链接 
 // all layout base text color
 $base-text-color:#1e272e;
 
@@ -10,11 +13,13 @@ $base-text-color:#1e272e;
 // layout left aside width
 $base-left-menu-width:260px;
 // layout left aside background color
-$base-left-menu-background:#485460;
+$base-left-menu-background:#b6b6b6;
 // layout left aside menu logo height
 $base-left-menu-logo-height:60px;
 // layout left aside menu logo right text font size
 $base-left-menu-logo-text-font-size:20px;
+// layout left aside menu logo right text color
+$base-left-menu-logo-text-color:#ecf0f1;
 
 // layout top tabbar related style
 // layout top tabbar height
@@ -25,3 +30,4 @@ $base-top-tabbar-background:#ced6e0;
 // layout main content related style
 // layout main background color
 $base-main-background:#dfe4ea;
+// #endregion

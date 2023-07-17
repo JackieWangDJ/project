@@ -29,3 +29,5 @@
 `Repeated` 重复
 
 `Global` 全局
+
+`Whether` 是否

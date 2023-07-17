@@ -4,12 +4,15 @@ import type { loginForm, loginResponseData } from "@/api/user/type";
 import { defineStore } from "pinia";
 import { UserState } from "./types/type";
 import { SET_TOKEN, GET_TOKEN } from "@/utils/localStroageUtils";
+// Import Routers
+import { constantRoutes } from "@/router/routes";
 // create user repositories
 let useUserStore = defineStore("User", {
   // Where data is stored
   state: (): UserState => {
     return {
       token: GET_TOKEN(), // Unique identification of the user
+      menuRoutes: constantRoutes, // Menu routes
     };
   },
   // Where asynchronous requests and logic are handled
