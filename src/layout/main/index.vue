@@ -12,7 +12,7 @@
   transform: scale(0);
 }
 .fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .fade-enter-to {
   opacity: 1;

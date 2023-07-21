@@ -1,10 +1,5 @@
 <template>
-  <div>
-    trademark
-  </div>
+  <div>trademark</div>
 </template>
-<script setup lang='ts'>
-  
-</script>
-<style scoped lang='scss'>
-</style>
+<script setup lang="ts"></script>
+<style scoped lang="scss"></style>

@@ -15,4 +15,3 @@ export const reqLogin = (data: loginForm) =>
 // 用户信息接口
 export const reqUserInfo = () =>
   requests.get<any, userResponseData>(API.USERINFO_URL);
-

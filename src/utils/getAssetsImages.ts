@@ -10,7 +10,7 @@ export const useFile = (url: string) => {
   const modules: Record<string, any> = import.meta.glob(
     "@/assets/**/*.{png,svg,jpg,jpeg}",
     { eager: true }
-  );  
+  );
   if (modules[url]) return modules[url].default;
   else {
     // images url exception

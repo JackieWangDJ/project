@@ -6,7 +6,13 @@
         <Logo />
         <el-scrollbar class="left-menu-scrollbar">
           <!-- dynamic menu -->
-          <el-menu background-color="#485460" text-color="#fff" router :collapse="isCollapse" :default-active="$route.path">
+          <el-menu
+            background-color="#485460"
+            text-color="#fff"
+            router
+            :collapse="isCollapse"
+            :default-active="$route.path"
+          >
             <Menu :menuList="userStore.menuRoutes" />
           </el-menu>
         </el-scrollbar>
@@ -18,7 +24,7 @@
         </el-header>
         <!-- main -->
         <el-main>
-          <el-scrollbar> 
+          <el-scrollbar>
             <Main></Main>
           </el-scrollbar>
         </el-main>
@@ -36,9 +42,8 @@ import Tabbar from "./tabbar/index.vue";
 import useUserStore from "@/store/modules/user";
 import { ref } from "vue";
 const userStore = useUserStore();
-const $route = useRoute()
-const isCollapse = ref(false)
-
+const $route = useRoute();
+const isCollapse = ref(false);
 </script>
 
 <style scoped lang="scss">

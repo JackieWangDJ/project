@@ -1,10 +1,5 @@
 <template>
-  <div>
-    peimission
-  </div>
+  <div>peimission</div>
 </template>
-<script setup lang='ts'>
-  
-</script>
-<style scoped lang='scss'>
-</style>
+<script setup lang="ts"></script>
+<style scoped lang="scss"></style>

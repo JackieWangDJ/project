@@ -40,11 +40,8 @@
 
 `internal` 内部的
 
-`automatically`  自动地，自然地，不假思索地，必然地
+`automatically` 自动地，自然地，不假思索地，必然地
 
 `approach` 方法，态度，靠近
 
 `suitable for` 适合于，适用于，适合...的
-
-
-
