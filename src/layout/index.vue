@@ -6,17 +6,21 @@
         <Logo />
         <el-scrollbar class="left-menu-scrollbar">
           <!-- dynamic menu -->
-          <el-menu background-color="#485460" text-color="#fff">
+          <el-menu background-color="#485460" text-color="#fff" router :collapse="isCollapse" :default-active="$route.path">
             <Menu :menuList="userStore.menuRoutes" />
           </el-menu>
         </el-scrollbar>
       </el-aside>
       <el-container>
         <!-- header tabbar -->
-        <el-header>Header</el-header>
+        <el-header>
+          <Tabbar></Tabbar>
+        </el-header>
         <!-- main -->
         <el-main>
-          <el-scrollbar> Main </el-scrollbar>
+          <el-scrollbar> 
+            <Main></Main>
+          </el-scrollbar>
         </el-main>
       </el-container>
     </el-container>
@@ -24,10 +28,17 @@
 </template>
 
 <script lang="ts" setup>
+import { useRoute } from "vue-router";
 import Logo from "./logo/index.vue";
 import Menu from "./menu/index.vue";
+import Main from "./main/index.vue";
+import Tabbar from "./tabbar/index.vue";
 import useUserStore from "@/store/modules/user";
+import { ref } from "vue";
 const userStore = useUserStore();
+const $route = useRoute()
+const isCollapse = ref(false)
+
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +68,7 @@ const userStore = useUserStore();
   // header style
   .el-header {
     padding: 0;
-    background-color: $base-top-tabbar-background;
+    // background-color: $base-top-tabbar-background;
     height: $base-top-tabbar-height;
   }
 }
