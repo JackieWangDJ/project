@@ -13,6 +13,7 @@ let useUserStore = defineStore("User", {
     return {
       token: GET_TOKEN(), // Unique identification of the user
       menuRoutes: constantRoutes, // Menu routes
+      isCollapse: false,
     };
   },
   // Where asynchronous requests and logic are handled

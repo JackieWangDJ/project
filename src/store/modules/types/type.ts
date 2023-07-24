@@ -4,4 +4,5 @@ import type { RouteRecordRaw } from "vue-router";
 export interface UserState {
   token: string | null | undefined;
   menuRoutes: RouteRecordRaw[];
+  isCollapse: boolean;
 }

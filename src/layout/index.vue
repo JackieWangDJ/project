@@ -2,7 +2,7 @@
   <div class="layout-container">
     <el-container>
       <!-- left menu -->
-      <el-aside>
+      <el-aside :style="{width: userStore.isCollapse ? '64px' : '260px'}">
         <Logo />
         <el-scrollbar class="left-menu-scrollbar">
           <!-- dynamic menu -->
@@ -10,8 +10,10 @@
             background-color="#485460"
             text-color="#fff"
             router
-            :collapse="isCollapse"
+            :collapse="userStore.isCollapse"
             :default-active="$route.path"
+            active-text-color="#ffd04b"
+            :collapse-transition="false"
           >
             <Menu :menuList="userStore.menuRoutes" />
           </el-menu>
@@ -40,10 +42,11 @@ import Menu from "./menu/index.vue";
 import Main from "./main/index.vue";
 import Tabbar from "./tabbar/index.vue";
 import useUserStore from "@/store/modules/user";
-import { ref } from "vue";
 const userStore = useUserStore();
 const $route = useRoute();
-const isCollapse = ref(false);
+// const isCollapse = ref(false);
+
+
 </script>
 
 <style scoped lang="scss">

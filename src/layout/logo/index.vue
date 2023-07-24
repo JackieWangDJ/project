@@ -6,14 +6,16 @@
       <!-- icon fill and lazy loading -->
       <el-image :src="iconPath" fit="fill" :lazy="true"></el-image>
       <!-- title -->
-      <el-text size="large">{{ settings.leftAsideTitle }}</el-text>
+      <el-text size="large" v-if="!userStore.isCollapse">{{ settings.leftAsideTitle }}</el-text>
     </div>
   </div>
   <!-- home page icon and title end -->
 </template>
 <script setup lang="ts">
 import { useFile } from "@/utils/getAssetsImages";
+import useUserStore from "@/store/modules/user";
 import settings from "@/settings";
+const userStore = useUserStore();
 // import icon from assets
 const iconPath = useFile(settings.leftAsideIconPath);
 </script>
