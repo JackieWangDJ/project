@@ -14,7 +14,7 @@ import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 // SVG 配置代码
 import "virtual:svg-icons-register";
 // import 'animate.css';
-import 'animate.css';
+import "animate.css";
 // 安装自定义插件，作用：注册全局组件
 import allGlobalComponent from "@/components";
 

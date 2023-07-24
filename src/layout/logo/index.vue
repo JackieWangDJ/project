@@ -6,7 +6,9 @@
       <!-- icon fill and lazy loading -->
       <el-image :src="iconPath" fit="fill" :lazy="true"></el-image>
       <!-- title -->
-      <el-text size="large" v-if="!userStore.isCollapse">{{ settings.leftAsideTitle }}</el-text>
+      <el-text size="large" v-if="!userStore.isCollapse">{{
+        settings.leftAsideTitle
+      }}</el-text>
     </div>
   </div>
   <!-- home page icon and title end -->

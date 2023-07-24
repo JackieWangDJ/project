@@ -2,7 +2,7 @@
   <div class="layout-container">
     <el-container>
       <!-- left menu -->
-      <el-aside :style="{width: userStore.isCollapse ? '64px' : '260px'}">
+      <el-aside :style="{ width: userStore.isCollapse ? '64px' : '260px' }">
         <Logo />
         <el-scrollbar class="left-menu-scrollbar">
           <!-- dynamic menu -->
@@ -45,8 +45,6 @@ import useUserStore from "@/store/modules/user";
 const userStore = useUserStore();
 const $route = useRoute();
 // const isCollapse = ref(false);
-
-
 </script>
 
 <style scoped lang="scss">

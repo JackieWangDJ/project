@@ -10,7 +10,7 @@
       <div class="breadcrump">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">homepage</el-breadcrumb-item>
-          <el-breadcrumb-item>{{route.path.slice(1)}}</el-breadcrumb-item>
+          <el-breadcrumb-item>{{ route.path.slice(1) }}</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
     </div>
@@ -21,11 +21,10 @@
 import { Expand, Fold } from "@element-plus/icons-vue";
 import useUserStore from "@/store/modules/user";
 import { ref, computed } from "vue";
-import { useRouter, useRoute } from 'vue-router'
-const router = useRouter()
+import { useRouter, useRoute } from "vue-router";
+const router = useRouter();
 console.log(router.getRoutes());
-const route = useRoute()
-
+const route = useRoute();
 
 const userStore = useUserStore();
 const collapseValue = computed(() => {
@@ -46,8 +45,7 @@ const circleUrl = ref(
   height: $base-top-tabbar-height;
   padding: 0 10px;
   .tabbar_left {
-  @apply flex items-center justify-center;
-
+    @apply flex items-center justify-center;
   }
 }
 .tabbar-collapse-icon {

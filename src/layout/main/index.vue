@@ -1,6 +1,11 @@
 <template>
   <router-view v-slot="{ Component }">
-    <transition name="fade" enter-active-class="animated animate__fadeInRight" leave-active-class="animated animate__fadeOutRight"  mode="out-in">
+    <transition
+      name="fade"
+      enter-active-class="animated animate__fadeInRight"
+      leave-active-class="animated animate__fadeOutRight"
+      mode="out-in"
+    >
       <component :is="Component" />
     </transition>
   </router-view>
