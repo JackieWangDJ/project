@@ -33,7 +33,6 @@ const userStore = useUserStore();
 const handleCollapseChange = () => {
   userStore.isCollapse = !userStore.isCollapse;
   console.log(userStore.isCollapse);
-  
 };
 </script>
 <style scoped lang="scss">
