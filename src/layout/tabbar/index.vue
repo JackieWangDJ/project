@@ -14,29 +14,27 @@
         </el-breadcrumb>
       </div>
     </div>
-    <div class="tabbar_right"><el-avatar :size="35" :src="circleUrl" /></div>
+    <div class="tabbar_right">
+      <el-avatar :size="35" :src="defaultAvatar" />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
 import { Expand, Fold } from "@element-plus/icons-vue";
 import useUserStore from "@/store/modules/user";
-import { ref, computed } from "vue";
-import { useRouter, useRoute } from "vue-router";
-const router = useRouter();
-console.log(router.getRoutes());
+// import { ref, computed } from "vue";
+import { useRoute } from "vue-router";
+import defaultAvatar from "@/assets/default-avatar.png";
+
 const route = useRoute();
 
 const userStore = useUserStore();
-const collapseValue = computed(() => {
-  return userStore.isCollapse ? "64px" : "260px";
-});
+
 const handleCollapseChange = () => {
   userStore.isCollapse = !userStore.isCollapse;
-  console.log(collapseValue.value);
+  console.log(userStore.isCollapse);
+  
 };
-const circleUrl = ref(
-  "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-);
 </script>
 <style scoped lang="scss">
 .tabbar {
