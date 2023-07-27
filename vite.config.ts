@@ -35,6 +35,9 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
       },
     },
     base: "/",
+    server: {
+      port: 8080,
+    },
   };
 };
 // export default defineConfig({

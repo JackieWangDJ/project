@@ -1,7 +1,10 @@
 <template>
   <div class="tabbar">
     <div class="tabbar_left">
-      <div @click="handleCollapseChange" class="animate-collapse">
+      <div
+        @click="handleCollapseChange"
+        class="animate-collapse animated animate-collapse"
+      >
         <el-icon v-if="userStore.isCollapse" class="tabbar-collapse-icon"
           ><Expand
         /></el-icon>
@@ -20,10 +23,12 @@
   </div>
 </template>
 <script setup lang="ts">
+// import collapse images
 import { Expand, Fold } from "@element-plus/icons-vue";
 import useUserStore from "@/store/modules/user";
 // import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
+// set default avatar
 import defaultAvatar from "@/assets/default-avatar.png";
 
 const route = useRoute();
@@ -48,5 +53,7 @@ const handleCollapseChange = () => {
 .tabbar-collapse-icon {
   width: 30px;
   height: 30px;
+}
+.animate-collapse {
 }
 </style>
