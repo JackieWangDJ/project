@@ -37,6 +37,14 @@ export default ({ command }: ConfigEnv): UserConfigExport => {
     base: "/",
     server: {
       port: 8080,
+      // 代理跨域
+      proxy: {
+        "/api": {
+          target: "http://localhost:3000",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, ""),
+        },
+      }
     },
   };
 };

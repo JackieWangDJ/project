@@ -16,7 +16,7 @@ interface dataType {
   message?: string;
 }
 // 获取用户新信息返回的数据类型
-export interface userResponseData {
+export interface UserResponseData {
   code: number;
   data: user;
 }
