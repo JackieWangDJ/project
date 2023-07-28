@@ -1,6 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-commit_message=$(git show -s --format=%B)
-pnpm run format
-git add .
-git commit -m "$commit_message"
+
+# 检查是否处于预提交 Hook
+if [ -n "$HUSKY_GIT_PARAMS" ]; then
+  commit_message=$(git show -s --format=%B)
+  pnpm run format
+  git add .
+  git commit -m "$commit_message" --no-verify
+fi
