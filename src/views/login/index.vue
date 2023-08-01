@@ -1,7 +1,12 @@
 <template>
   <div class="login_container">
     <el-row :gutter="0">
-      <el-col :span="12" :offset="0" :xs="0"></el-col>
+      <el-col :span="12" :offset="0" :xs="0">
+        <img
+            src="/layout-icon/icon.png"
+            class="image"
+          />
+      </el-col>
       <el-col class="form_container" :span="12" :offset="0" :xs="24">
         <el-form :model="userform" :rules="rules" ref="ruleFormRef">
           <h1>Login</h1>

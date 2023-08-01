@@ -11,6 +11,7 @@
       }}</el-text>
     </div>
   </div>
+
   <!-- home page icon and title end -->
 </template>
 <script setup lang="ts">
@@ -20,6 +21,7 @@ import settings from "@/settings";
 const userStore = useUserStore();
 // import icon from assets
 const iconPath = useFile(settings.leftAsideIconPath);
+
 </script>
 <style scoped lang="scss">
 // container style
